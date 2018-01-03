@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>博客首页</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/js/highlight/styles/idea.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="/public/js/html5shiv.min.js"></script>
+    <script src="/public/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <%- include('nav') -%>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="/img/banner2.jpg" style="width:100%" />
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="list-group">
+                                <a href="javascript:void(0);" class="list-group-item active">
+                                    热点文章推荐
+                                </a>
+                                <a href="javascript:void(0);" class="list-group-item">Mysql入门最佳实践：20分钟急速上手教程</a>
+                                <a href="javascript:void(0);" class="list-group-item">学习Redux之分析Redux核心代码分析</a>
+                                <a href="javascript:void(0);" class="list-group-item">Node.js入门第一章：启动你的第一个程序</a>
+                                <a href="javascript:void(0);" class="list-group-item">Flux 架构入门教程</a>
+                                <a href="javascript:void(0);" class="list-group-item">利用npm安装/删除/发布/更新/撤销发布包</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-9">
+                    <div class="jumbotron">
+                        <h3>
+                            <%= art.title%>
+                        </h3>
+                        <hr>
+                        <p style="font-size: 10px">
+                            <span style="background:#393939; color:white;border-radius: 3px; padding: 3px 4px">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <span>
+                                    <%= art.author%>
+                                </span>
+                            </span>&nbsp;
+                            <span style="background:#FFC219; color:white;border-radius: 3px; padding: 3px 4px">
+                                <span class="glyphicon glyphicon-time"> </span>
+                                <span>
+                                    <%= art.updatetime%>
+                                </span>
+                            </span>&nbsp;
+                            <span style="background:#E32551; color:white;border-radius: 3px; padding: 3px 4px">
+                                <span class="glyphicon glyphicon-eye-open"> </span>
+                                <span>(
+                                    <%= art.read%>)</span>
+                            </span>&nbsp;
+                            <span style="background:#73C8A9; color:white;border-radius: 3px; padding: 3px 4px">
+                                <span class="glyphicon glyphicon-comment"> </span>
+                                <span>(
+                                    <%= art.support%>)</span>
+                            </span>
+                        </p>
+                        <%= art.content%>
+                    </div>
+                    <div class="jumbotron">
+
+                        <div class="row">
+                            <div class="col-xs-6">评论</div>
+                            <div class="col-xs-6" style="text-align: right">共有
+                                <span class="messageCount">1</span> 条评论</div>
+                        </div>
+                        <br>
+                        <div><%= username %></div>
+                        <textarea rows="3" class="form-control" placeholder="请输入评论" id="messageContent"></textarea>
+                        <br>
+                        <input type="hidden" id="contentId" value="<%= art._id %>">
+                        <p>
+                            <button class="btn btn-primary btn-sm" role="button" id="messageBtn">提交</button>
+                        </p>
+                        <div id="commentList">
+                            
+                        </div>
+                        <nav>
+                            <ul class="pager">
+                                <li class="previous">
+                                    <span>
+                                        <b aria-hidden="true">←</b> 没有上一页了
+                                    </span>
+                                </li>
+                                <li class="pageList">1/1</li>
+                                <li class="next">
+                                    <span>
+                                        <b aria-hidden="true">←</b> 没有下一页了
+                                    </span>
+                                </li>
+                            </ul>
+                        </nav>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <%- include('footer') -%>
+</body>
+
+</html>

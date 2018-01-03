@@ -1,0 +1,22 @@
+config：配置文件，可以直接在此处修改配置
+
+modles：业务模块，专门处理业务逻辑及数据库的操作，方便后期维护和调用
+
+node_modules：依赖模块的文件夹，自动生成
+
+public：静态资源文件夹（存放JS、css、img等静态资源文件）
+
+router：路由文件夹，存放的是咱们的路由模块的配置信息
+
+schema：数据库的实体操作对象
+
+views：存放所有的视图/模板
+
+app.js：入口文件
+
+package.json：依赖模块的文件
+
+
+流程：以文章列表为例：app.js -> 进入路由/router/admin/index.js -> /router/admin/article.js -> 查询操作由/modles/admin/article.js做操作，操作的对象是/schema/admin/Article.js -> 最后由/router/admin/article.js做渲染操作
+
+

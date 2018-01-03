@@ -1,0 +1,57 @@
+Mongodb：可以实现关联查询（lookup）
+大概2.7之前，这个版本是不太稳定，
+
+Mongoose：populate
+
+
+（Mongoose的命名规则是怎么定义？）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mongodb关联查询：
+Mongodb3.2之后（2015年中旬左右），版本更新之后，增加了一个Lookup，叫做左关联
+
+
+
+
+//运行以下语句时，注意删除注释
+db.product.aggregate([//
+     {
+       $lookup:
+         {
+           from: "orders",//表名，是我们需要关联查询的表
+           localField: "_id",//表需要关联的键
+           foreignField: "pid",//【orders】的matching key
+           as: "inventory_docs"//别名
+         }
+    }
+ ])
+
+
+
+
+
+
+
+
+
+
+
